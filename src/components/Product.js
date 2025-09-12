@@ -2,52 +2,64 @@ import React from "react";
 import { Col, Dropdown, Row, Container, Card, Button } from "react-bootstrap";
 
 const Product = () => {
-  const products = [
+  const cartData = [
     {
-      id: 1,
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: 109.95,
+      id: 15,
+      title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+      price: 56.99,
       description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      category: "men's clothing",
-      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+        "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+      category: "women's clothing",
+      image: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
       rating: {
-        rate: 3.9,
-        count: 120,
+        rate: 2.6,
+        count: 235,
       },
     },
+    // {
+    //   id: 16,
+    //   title:
+    //     "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    //   price: 29.95,
+    //   description:
+    //     "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+    //   category: "women's clothing",
+    //   image: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
+    //   rating: {
+    //     rate: 2.9,
+    //     count: 340,
+    //   },
+    // },
   ];
   return (
     <div>
       <section>
         <Container>
-          {/* <Row>
-            <Col>
-              {products.map((product, index) => {
-                return <p>{product.title}</p>;
-              })}
-            </Col>
-          </Row> */}
-          <Row>
-            {products.map((product, index) => {
-              return (
-                <Col md={3}>
+          {cartData.map((product, index) => {
+            return (
+              <Row>
+                <Col md={12}>
                   <Card>
-                    <Card.Img variant="top" src={product.image} />
-                    <Card.Body>
-                      <Card.Title>{product.title}</Card.Title>
-                      <Card.Text>
-                        <h6>{product.category}</h6>
-                        <p>{product.description}</p>
-                        <p>&#8377; {product.price}</p>
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
+                    <Row>
+                      <Col md={3}>
+                        <Card.Img src={product.image} className="cartImage" />
+                      </Col>
+                      <Col>
+                        <Card.Body>
+                          <Card.Title>{product.title}</Card.Title>
+                          <Card.Text>
+                            <h6>{product.category}</h6>
+                            <p>&#8377; {product.price}</p>
+                          </Card.Text>
+                          <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                      </Col>
+                    </Row>
                   </Card>
                 </Col>
-              );
-            })}
-          </Row>
+              </Row>
+            );
+          })}
         </Container>
       </section>
     </div>
