@@ -1,14 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Col, Dropdown, Row, Card, Button } from "react-bootstrap";
+import { Link } from "react-router";
 
 const Category = () => {
-  const student = {
-    name: "Nupur",
-    branch: "CSE",
-    roll: "1",
-    city: "jamshedpur",
-  };
   const products = [
     {
       id: 1,
@@ -281,46 +276,39 @@ const Category = () => {
       },
     },
   ];
-
-
   return (
     <div>
       <section>
-        <Container>
-          {/* <Row>
-            <Col>
-              {student.name}, {student.branch},{student.roll},{student.city}
-            </Col>
-          </Row> */}
-          <Row>
-            <Col>
-              {products.map((product, index) => {
-                return <p>{product.title}</p>;
-              })}
-            </Col>
-          </Row>
-          <Row>
-            {products.map((product, index) => {
-              return (
-                <Col md={3}>
-                  <Card>
-                    <Card.Img variant="top" src={product.image} />
-                    <Card.Body>
-                      <Card.Title>{product.title}</Card.Title>
-                      <Card.Text>
-                        <h6>{product.category}</h6>
-                        <p>{product.description}</p>
-                        <p>&#8377; {product.price}</p>
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              );
-            })}
-          </Row>
-        </Container>
-      </section>
+              <Container>
+                
+                <Row>
+                  {products.map((product, index) => {
+                    return (
+                      <Col md={3} className="product-card">
+                        <Link to="/product">
+                        <Card>
+                          <Card.Img variant="top" src={product.image}  className="productImage"/>
+                          <Card.Body>
+                            <Card.Title>{product.title}</Card.Title>
+                            <Card.Text>
+                              <h6>{product.category}</h6>
+                              <p className="description">{product.description}</p>
+                              <p>&#8377; {product.price}</p>
+                            </Card.Text>
+                             <div className="d-flex gap-2 mb-2">
+                            <Button variant="primary">Add to Cart</Button>
+                            <Button variant="outline-primary">Buy Now</Button>
+      
+                             </div>
+                          </Card.Body>
+                        </Card>
+                        </Link>
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </Container>
+            </section>
     </div>
   );
 };
