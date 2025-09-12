@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { Col, Dropdown, Row, Card, Button } from "react-bootstrap";
-
+import { Link } from "react-router";
 const Home = () => {
   const products = [
     {
@@ -279,29 +279,29 @@ const Home = () => {
     <div>
       <section>
         <Container>
-          <Row>
-            <Col>
-              {products.map((product, index) => {
-                return <p>{product.title}</p>;
-              })}
-            </Col>
-          </Row>
+          
           <Row>
             {products.map((product, index) => {
               return (
-                <Col md={3}>
+                <Col md={3} className="product-card">
+                  <Link to="/product">
                   <Card>
-                    <Card.Img variant="top" src={product.image} />
+                    <Card.Img variant="top" src={product.image}  className="productImage"/>
                     <Card.Body>
                       <Card.Title>{product.title}</Card.Title>
                       <Card.Text>
                         <h6>{product.category}</h6>
-                        <p>{product.description}</p>
+                        <p className="description">{product.description}</p>
                         <p>&#8377; {product.price}</p>
                       </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
+                       <div className="d-flex gap-2 mb-2">
+                      <Button variant="primary">Add to Cart</Button>
+                      <Button variant="outline-primary">Buy Now</Button>
+
+                       </div>
                     </Card.Body>
                   </Card>
+                  </Link>
                 </Col>
               );
             })}
