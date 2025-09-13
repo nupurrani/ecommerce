@@ -16,6 +16,7 @@ import Payment from "./components/Payment";
 import Wishlist from "./components/Wishlist";
 import Orders from "./components/Orders";
 import Product from "./components/Product";
+import Login from "./components/Login";
 
 
 
@@ -39,6 +40,8 @@ function App() {
         <Route path="/wishlist" element={<Wishlist/>}/>
         <Route path="/orders" element={<Orders/>}/>
         <Route path="/product" element={<Product/>}/>
+        <Route path="/login" element={<Login/>}/>
+        
         <Route path="*" element={<Category/>}/>
         
       </Routes>

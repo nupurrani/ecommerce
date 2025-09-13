@@ -1,6 +1,12 @@
 import React from "react";
 import { Col, Dropdown, Row, Container, Card, Button } from "react-bootstrap";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCartShopping,
+  faHome,
+  faEnvelope,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 const cart = () => {
   const cartData = [
     {
@@ -42,7 +48,7 @@ const cart = () => {
                   <Card>
                     <Row>
                       <Col md={3}>
-                        <Card.Img src={product.image} className="cartImage" />
+                        <Card.Img variant="top" src={product.image} className="productImage" />
                       </Col>
                       <Col>
                         <Card.Body>
@@ -51,7 +57,14 @@ const cart = () => {
                             <h6>{product.category}</h6>
                             <p>&#8377; {product.price}</p>
                           </Card.Text>
-                          <Button variant="primary">Go somewhere</Button>
+                          <div className="d-flex gap-2 mb-2">
+                            <Button variant="primary">
+                              <FontAwesomeIcon icon={faCartShopping} />
+                              Add to Cart
+                            </Button>
+                            <Button variant="outline-primary">Buy Now</Button>
+                            <Button variant="outline-primary">Remove</Button>
+                          </div>
                         </Card.Body>
                       </Col>
                     </Row>

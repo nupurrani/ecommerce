@@ -52,7 +52,7 @@ const Product = () => {
                   <Card>
                     <Row>
                       <Col md={3}>
-                        <Card.Img src={product.image} className="cartImage" />
+                        <Card.Img  variant="top" src={product.image} className="productImage" />
                       </Col>
                       <Col>
                         <Card.Body>
