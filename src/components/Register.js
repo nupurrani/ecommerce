@@ -1,20 +1,87 @@
-import React from 'react'
+import React from "react";
 import { Col, Dropdown, Row, Container } from "react-bootstrap";
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 
 const Register = () => {
+  const SignupSchema = Yup.object().shape({
+    mobile: Yup.string()
+     .matches(/^[6-9]\d{9}$/, 'Enter a valid 10 Digit Mobile No. ')
+      .required("Mobile No. is Mandetory!"),
+    password: Yup.string()
+      .min(6, "Please fill Minimum 6 digit Password !")
+      .max(10, "Invalid Password!")
+      .required("Password is Mandetory!"),
+    email: Yup.string().email("Invalid email").required(" E-mail Id Required!"),
+  });
+
   return (
     <div>
-        <section>
-            <Container>
-                <Row>
-                    <Col>
-                        <h1>Register</h1>
-                    </Col>
-                </Row>
-            </Container>
-        </section>
+      <section>
+        <Container>
+          <Row>
+            <Col>
+              <Formik
+                initialValues={{
+                  mobile: "",
+                  email: "",
+                  password: "",
+                }}
+                validationSchema={SignupSchema}
+                onSubmit={(values) => {
+                  // same shape as initial values
+                  console.log(values);
+                }}
+              >
+                {({ errors, touched }) => (
+                  <Form>
+                    <Row>
+                      <Col>
+                        <label>Mobile</label>
+                      </Col>
+                      <Col>
+                        <Field name="mobile" />
+                        {errors.mobile && touched.mobile ? (
+                          <div>{errors.mobile}</div>
+                        ) : null}
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <label>E-Mail</label>
+                      </Col>
+                      <Col>
+                        <Field name="email" type="email" />
+                        {errors.email && touched.email ? (
+                          <div>{errors.email}</div>
+                        ) : null}
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <label>Password</label>
+                      </Col>
+                      <Col>
+                        <Field name="password" />
+                        {errors.password && touched.password ? (
+                          <div>{errors.password}</div>
+                        ) : null}
+                      </Col>
+                    </Row>
+                    <Row>
+                        <Col></Col>
+                        <Col><button type="submit">Register</button></Col>
+                    </Row>
+                    
+                  </Form>
+                )}
+              </Formik>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
