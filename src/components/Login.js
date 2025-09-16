@@ -21,7 +21,7 @@ const Login = () => {
           <Row>
             <Col>
               <h2>Login</h2>
-              <Formik
+              <Formik 
                 initialValues={{
                   // mobile: "",
                   email: "",
@@ -41,7 +41,7 @@ const Login = () => {
                         <label>E-Mail</label>
                       </Col>
                       <Col>
-                        <Field name="email" type="email" placeholder="email" />
+                        <Field name="email" type="email"   placeholder="email" />
                         {errors.email && touched.email ? (
                           <div>{errors.email}</div>
                         ) : null}
@@ -52,37 +52,30 @@ const Login = () => {
                         <label>Password</label>
                       </Col>
                       <Col>
-                        <Field
-                          name="password"
-                          type="password"
-                          placeholder="password"
-                        />
+                        <Field name="password" type="password"  placeholder="password"/>
                         {errors.password && touched.password ? (
                           <div>{errors.password}</div>
                         ) : null}
                       </Col>
                     </Row>
-                    <Row className="form-options">
+                    <Row className="form-options" >
+                      
                       <Col>
-                        <label>
-                          <input type="checkbox"></input>Remember me{" "}
-                          <a href="/forgot-password" className="forgot-link">
-                            Forgot Password
-                          </a>{" "}
-                        </label>
+                        <label><input type="checkbox"></input>Remember me <a href="/forgot-password" className="forgot-link">Forgot Password</a> </label>
+                      
                       </Col>
                     </Row>
                     <Row>
                       <Col></Col>
                       <Col>
-                        <button type="submit">Login</button>
+                        <button type="login" >Login</button>
                       </Col>
                     </Row>
                     <Row className="register">
+                      
                       <Col>
-                        <p>
-                          Don't have an account? <a href="#">register here</a>{" "}
-                        </p>
+                        <p>Don't have an account? <a href="#">register here</a> </p>
+                      
                       </Col>
                     </Row>
                   </Form>

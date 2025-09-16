@@ -17,10 +17,11 @@ const Register = () => {
 
   return (
     <div>
-      <section>
+      <section className="glass-container">
         <Container>
           <Row>
             <Col>
+                <h2>Register</h2>
               <Formik
                 initialValues={{
                   mobile: "",
