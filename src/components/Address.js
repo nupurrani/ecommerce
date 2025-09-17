@@ -5,22 +5,26 @@ import * as Yup from "yup";
 
 const Address = () => {
   const SignupSchema = Yup.object().shape({
-    Address1: Yup.string()
-      .min(2, "Too Short!")
+    addressline1: Yup.string()
+      .min(6, "Too Short!")
       .max(50, "Too Long!")
-      .required("Required"),
-    Address2: Yup.string()
-      .min(2, "Too Short!")
+      .required("please fill the address1"),
+    addressline2: Yup.string()
+      .min(6, "Too Short!")
       .max(50, "Too Long!")
-      .required("Required"),
+      .required("please fill the address2"),
     city: Yup.string()
       .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
+      .max(20, "Too Long!")
+      .required("city is Mandetory!"),
     state: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
+      .min(4, "Too Short!")
+      .max(20, "Too Long!")
+      .required("state is Mandetory!"),
+    pin: Yup.string()
+      .min(6, "Please fill Minimum 6 digit PIN CODE !")
+      .max(10, "Invalid PIN CODE!")
+      .required("PINCODE is Mandetory!"),
     mobile: Yup.string()
       .matches(/^[6-9]\d{9}$/, "Enter a valid 10 Digit Mobile No. ")
       .required("Mobile No. is Mandetory!"),
@@ -35,10 +39,11 @@ const Address = () => {
               <h2>Address</h2>
               <Formik
                 initialValues={{
-                  Address1: "",
-                  Address2: "",
+                  addressline1: "",
+                  addressline2: "",
                   city: "",
                   state: "",
+                  pin: "",
                   mobile: "",
                 }}
                 validationSchema={SignupSchema}
@@ -54,9 +59,9 @@ const Address = () => {
                         <label>Address Line 1</label>
                       </Col>
                       <Col>
-                        <Field name="address1" />
-                        {errors.address1 && touched.address1 ? (
-                          <div>{errors.address1}</div>
+                        <Field name="addressline1" />
+                        {errors.addressline1 && touched.addressline1 ? (
+                          <div>{errors.addressline1}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -95,6 +100,17 @@ const Address = () => {
                     </Row>
                     <Row className="input-group">
                       <Col>
+                        <label>Pin Code</label>
+                      </Col>
+                      <Col>
+                        <Field name="pin" />
+                        {errors.pin && touched.pin ? (
+                          <div>{errors.pin}</div>
+                        ) : null}
+                      </Col>
+                    </Row>
+                    <Row className="input-group">
+                      <Col>
                         <label>Mobile</label>
                       </Col>
                       <Col>
@@ -103,7 +119,7 @@ const Address = () => {
                           <div>{errors.mobile}</div>
                         ) : null}
                       </Col>
-                    </Row >
+                    </Row>
                     <button type="submit">Submit</button>
                   </Form>
                 )}
