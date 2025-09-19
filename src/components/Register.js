@@ -3,7 +3,6 @@ import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import "./Register.css";
 
 
 const Register = () => {
@@ -40,12 +39,12 @@ const Register = () => {
               >
                 {({ errors, touched }) => (
                   <Form>
-                    <Row>
+                    <Row className="input-group">
                       <Col>
                         <label>Mobile</label>
                       </Col>
                       <Col>
-                        <Field name="mobile" className="input-field"  />
+                        <Field name="mobile"  />
                         {errors.mobile && touched.mobile ? (
                           <div className="error">{errors.mobile}</div>
                         ) : null}
@@ -56,7 +55,7 @@ const Register = () => {
                         <label>E-Mail</label>
                       </Col>
                       <Col>
-                        <Field name="email" type="email"  className="input-field"/>
+                        <Field name="email" type="email"/>
                         {errors.email && touched.email ? (
                           <div className="error">{errors.email}</div>
                         ) : null}
@@ -67,7 +66,7 @@ const Register = () => {
                         <label>Password</label>
                       </Col>
                       <Col>
-                        <Field name="password"   type="password" className="input-field" />
+                        <Field name="password"   type="password" />
                         {errors.password && touched.password ? (
                           <div className="error">{errors.password}</div>
                         ) : null}
@@ -76,7 +75,7 @@ const Register = () => {
                     <Row>
                       <Col></Col>
                       <Col>
-                        <button type="submit" className="btn-submit">Register</button>
+                        <button type="submit">Register</button>
                       </Col>
                     </Row>
                   </Form>

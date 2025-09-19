@@ -1,13 +1,13 @@
-body {
-  /* background: linear-gradient(135deg, #e0eafc, #cfdef3);  Light gradient */
+/* body {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);  Light gradient */
   /* min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; */
-  justify-content: center;
   align-items: center;
-  display: flex;
-}
+   justify-content: center;
+  align-items: center;
+  display: flex; 
+}  */
 .App {
   text-align: center;
 }
