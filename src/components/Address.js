@@ -6,8 +6,8 @@ import * as Yup from "yup";
 const Address = () => {
   const SignupSchema = Yup.object().shape({
     addressline1: Yup.string()
-      .min(6, "Too Short!")
-      .max(50, "Too Long!")
+      .min(6, "Must be at least 6 characters!")
+      .max(50, "Must be at most 50 characters!")
       .required("please fill the address1"),
     addressline2: Yup.string()
       .min(6, "Too Short!")
@@ -18,7 +18,8 @@ const Address = () => {
       .max(20, "Too Long!")
       .required("city is Mandetory!"),
     state: Yup.string()
-      .min(4, "Too Short!")
+      // .min(4, "Too Short!")
+      .matches(/^[a-zA-Z]+$/, 'Only letters are allowed') 
       .max(20, "Too Long!")
       .required("state is Mandetory!"),
     pin: Yup.string()

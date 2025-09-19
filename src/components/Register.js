@@ -1,12 +1,15 @@
+
 import React from "react";
-import { Col, Dropdown, Row, Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import "./Register.css";
+
 
 const Register = () => {
   const SignupSchema = Yup.object().shape({
     mobile: Yup.string()
-     .matches(/^[6-9]\d{9}$/, 'Enter a valid 10 Digit Mobile No. ')
+      .matches(/^[6-9]\d{9}$/, "Enter a valid 10 Digit Mobile No. ")
       .required("Mobile No. is Mandetory!"),
     password: Yup.string()
       .min(6, "Please fill Minimum 6 digit Password !")
@@ -16,12 +19,13 @@ const Register = () => {
   });
 
   return (
-    <div>
-      <section className="glass-container">
+    <div className="register-page">
+      <div className="circle"></div>
+      <section  className="glass-container">
         <Container>
           <Row>
             <Col>
-                <h2>Register</h2>
+              <h2 className="form-title">Register</h2>
               <Formik
                 initialValues={{
                   mobile: "",
@@ -41,39 +45,40 @@ const Register = () => {
                         <label>Mobile</label>
                       </Col>
                       <Col>
-                        <Field name="mobile" />
+                        <Field name="mobile" className="input-field"  />
                         {errors.mobile && touched.mobile ? (
-                          <div>{errors.mobile}</div>
+                          <div className="error">{errors.mobile}</div>
                         ) : null}
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="input-group">
                       <Col>
                         <label>E-Mail</label>
                       </Col>
                       <Col>
-                        <Field name="email" type="email" />
+                        <Field name="email" type="email"  className="input-field"/>
                         {errors.email && touched.email ? (
-                          <div>{errors.email}</div>
+                          <div className="error">{errors.email}</div>
                         ) : null}
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="input-group">
                       <Col>
                         <label>Password</label>
                       </Col>
                       <Col>
-                        <Field name="password" />
+                        <Field name="password"   type="password" className="input-field" />
                         {errors.password && touched.password ? (
-                          <div>{errors.password}</div>
+                          <div className="error">{errors.password}</div>
                         ) : null}
                       </Col>
                     </Row>
                     <Row>
-                        <Col></Col>
-                        <Col><button type="submit">Register</button></Col>
+                      <Col></Col>
+                      <Col>
+                        <button type="submit" className="btn-submit">Register</button>
+                      </Col>
                     </Row>
-                    
                   </Form>
                 )}
               </Formik>
