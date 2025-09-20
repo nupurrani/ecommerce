@@ -149,7 +149,7 @@ const Address = () => {
           </Row>
         </Container>
       </section>
-      {/* <section>
+      <section>
         <Container>
           <Row>
             <Col>
@@ -157,60 +157,11 @@ const Address = () => {
                 {addresses.map((address, index) => {
                   return (
                     <div>
-                      <p>
-                        {address.addressline1}, {address.addressline2},City :{" "}
-                        {address.city}, State : {address.state}
-                        {-address.pin} Mobile : {address.mobile}
-                      </p>
+                      <p>{address.addressline1}, {address.addressline2},City : {address.city}, State : {address.state}{ - address.pin} Mobile : {address.mobile}</p>
                     </div>
                   );
                 })}
               </div>
-            </Col>
-          </Row>
-        </Container>
-      </section> */}
-      <section>
-        <Container>
-          <Row>
-            <Col>
-              <Formik
-                initialValues={{
-                  addressId: "",
-                }}
-                onSubmit={async (values) => {
-                  await new Promise((r) => setTimeout(r, 500));
-                  alert(JSON.stringify(values, null, 2));
-                }}
-              >
-                {({ values }) => (
-                  <Form>
-                    <div id="my-radio-group">addresses</div>
-                    <div role="group" aria-labelledby="my-radio-group">
-                      {addresses.map((address, index) => {
-                        return (
-                          <div>
-                            <label>
-                              <Field
-                                type="radio"
-                                name="addressId"
-                                value={address.id}
-                              />
-                              {address.addressline1}, {address.addressline2}
-                              ,City : {address.city}, State : {address.state} - 
-                              {address.pin} Mobile : {address.mobile}
-                            </label>
-                          </div>
-                        );
-                      })}
-
-                      <div>addresses: {values.addressId}</div>
-                    </div>
-
-                    <button type="submit">Submit</button>
-                  </Form>
-                )}
-              </Formik>
             </Col>
           </Row>
         </Container>

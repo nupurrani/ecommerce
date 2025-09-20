@@ -18,6 +18,7 @@ import Orders from "./components/Orders";
 import Product from "./components/Product";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
+import AddProduct from "./components/AddProduct";
 
 
 
@@ -42,6 +43,7 @@ function App() {
         <Route path="/orders" element={<Orders/>}/>
         <Route path="/product" element={<Product/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/addproduct" element={<AddProduct/>}/>
         <Route path="/profile" element={<Profile/>}/>
         
         <Route path="*" element={<Category/>}/>
