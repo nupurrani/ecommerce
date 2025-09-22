@@ -14,6 +14,7 @@ const Address = () => {
       .max(50, "Too Long!")
       .required("please fill the address2"),
     city: Yup.string()
+      .matches(/^[a-zA-Z]+$/, "Only letters are allowed")
       .min(2, "Too Short!")
       .max(20, "Too Long!")
       .required("city is Mandetory!"),
