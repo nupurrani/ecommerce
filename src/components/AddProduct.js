@@ -105,12 +105,9 @@ const AddProduct = () => {
                           className="form-control"
                         >
                           <option value="">Select a category</option>
-                          <option value="men's clothing">Men's clothing</option>
-                          <option value="jewelery">Jewelery</option>
-                          <option value="electronics">Electronics</option>
                           {categories.map((category, index) => {
                             return (
-                              <option value={category.category}>
+                              <option value={category.category} key={index}>
                                 {category.category}
                               </option>
                             );

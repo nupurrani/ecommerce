@@ -24,11 +24,11 @@ const Address = () => {
       .matches(/^[a-zA-Z]+$/, "Only letters are allowed")
       .max(20, "Too Long!")
       .required("state is Mandetory!"),
-    pin: Yup.string()
-      .matches(/^[1-9]\d{5}$/, "Enter a valid 6 Digit PIN CODE! ")
-      .min(6, "Please fill Minimum 6 digit PIN CODE !")
-      .max(10, "Invalid PIN CODE!")
-      .required("PINCODE is Mandetory!"),
+    // pin: Yup.string()
+    //   .matches(/^[1-9]\d{5}$/, "Enter a valid 6 Digit PIN CODE! ")
+    //   .min(6, "Please fill Minimum 6 digit PIN CODE !")
+    //   .max(10, "Invalid PIN CODE!")
+    //   .required("PINCODE is Mandetory!"),
     mobile: Yup.string()
       .matches(/^[6-9]\d{9}$/, "Enter a valid 10 Digit Mobile No. ")
       .required("Mobile No. is Mandetory!"),
@@ -127,8 +127,8 @@ const Address = () => {
                         <label>Pin Code</label>
                       </Col>
                       <Col>
-                        {/* <Field name="pin" /> */}
-                        <InputMask mask="999999" maskChar={null} name="pin" placeholder="Enter PIN" />
+                        <Field name="pin" />
+                        {/* <InputMask mask="999999" maskChar={null} name="pin" placeholder="Enter PIN" /> */}
                         {errors.pin && touched.pin ? (
                           <div>{errors.pin}</div>
                         ) : null}
