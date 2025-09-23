@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Dropdown, Row, Container, Card, Button } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { Link } from 'react-router';
 
 const Login = () => {
   const SignupSchema = Yup.object().shape({
@@ -74,7 +75,7 @@ const Login = () => {
                     <Row className="register">
                       
                       <Col>
-                        <p>Don't have an account? <a href="#">register here</a> </p>
+                        <p>Don't have an account? <Link to={"/register"}>register here</Link> </p>
                       
                       </Col>
                     </Row>
