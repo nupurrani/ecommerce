@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Dropdown, Row, Container, Card, Button } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
+import { InputMask} from "react-input-mask" ;
 import * as Yup from "yup";
 
 const Address = () => {
@@ -126,7 +127,8 @@ const Address = () => {
                         <label>Pin Code</label>
                       </Col>
                       <Col>
-                        <Field name="pin" />
+                        {/* <Field name="pin" /> */}
+                        <InputMask mask="999999" maskChar={null} name="pin" placeholder="Enter PIN" />
                         {errors.pin && touched.pin ? (
                           <div>{errors.pin}</div>
                         ) : null}

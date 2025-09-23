@@ -27,7 +27,10 @@ const AddProduct = () => {
       .required("Product Name is Mandatory!"),
     category: Yup.string().required("Select a Category"),
     price: Yup.string()
-      .matches(/^\d+(\.\d{2})?$/, "Price must be a number with exactly two decimal places")
+      .matches(
+        /^\d+(\.\d{2})?$/,
+        "Price must be a number with exactly two decimal places"
+      )
       .required("Price is mandatory!"),
     photo: Yup.mixed()
       .nullable()
@@ -40,7 +43,7 @@ const AddProduct = () => {
       }),
   });
 
-  const products = [
+  const categories = [
     {
       id: 3,
       category: "men's clothing",
@@ -84,7 +87,9 @@ const AddProduct = () => {
                       <Col>
                         <Field name="productname" className="form-control" />
                         {errors.productname && touched.productname && (
-                          <div className="text-danger">{errors.productname}</div>
+                          <div className="text-danger">
+                            {errors.productname}
+                          </div>
                         )}
                       </Col>
                     </Row>
@@ -103,6 +108,13 @@ const AddProduct = () => {
                           <option value="men's clothing">Men's clothing</option>
                           <option value="jewelery">Jewelery</option>
                           <option value="electronics">Electronics</option>
+                          {categories.map((category, index) => {
+                            return (
+                              <option value={category.category}>
+                                {category.category}
+                              </option>
+                            );
+                          })}
                         </Field>
                         {errors.category && touched.category && (
                           <div className="text-danger">{errors.category}</div>
@@ -115,7 +127,11 @@ const AddProduct = () => {
                         <label>Price</label>
                       </Col>
                       <Col>
-                        <Field name="price" type="text" className="form-control" />
+                        <Field
+                          name="price"
+                          type="text"
+                          className="form-control"
+                        />
                         {errors.price && touched.price && (
                           <div className="text-danger">{errors.price}</div>
                         )}
@@ -157,9 +173,7 @@ const AddProduct = () => {
       <section>
         <Container>
           <Row>
-            <Col>
-
-            </Col>
+            <Col></Col>
           </Row>
         </Container>
       </section>
