@@ -48,7 +48,7 @@ const Profile = () => {
                           <Col>
                             <Field name="name" type="name"   placeholder="name" />
                             {errors.name && touched.name ? (
-                              <div>{errors.name}</div>
+                              <div className="text-danger">{errors.name}</div>
                             ) : null}
                           </Col>
                         </Row>
@@ -60,7 +60,7 @@ const Profile = () => {
                           <Col>
                             <Field name="email" type="email"   placeholder="email" />
                             {errors.email && touched.email ? (
-                              <div>{errors.email}</div>
+                              <div className="text-danger">{errors.email}</div>
                             ) : null}
                           </Col>
                         </Row>
@@ -71,7 +71,7 @@ const Profile = () => {
                           <Col>
                             <Field name="password" type="password"  placeholder="password"/>
                             {errors.password && touched.password ? (
-                              <div>{errors.password}</div>
+                              <div className="text-danger">{errors.password}</div>
                             ) : null}
                           </Col>
                         </Row>

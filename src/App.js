@@ -19,6 +19,7 @@ import Product from "./components/Product";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import AddProduct from "./components/AddProduct";
+import New from "./components/New";
 
 
 
@@ -45,6 +46,9 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/addproduct" element={<AddProduct/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/new" element={<New/>}/>
+
+        
         
         <Route path="*" element={<Category/>}/>
         

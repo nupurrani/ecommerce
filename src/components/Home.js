@@ -6,6 +6,9 @@ import Slide4 from '../Images/slide4.jpg'
 import Slide7 from '../Images/slide7.jpg'
 import slide4 from '../Images/slide4.jpg'
 import slide6 from '../Images/slide6.jpg'
+// import Star from "./components/Star";
+
+
 const Home = () => {
   const products = [
     {
@@ -16,9 +19,9 @@ const Home = () => {
         "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       category: "men's clothing",
       image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-      rating: {
-        rate: 3.9,
-        count: 120,
+       rating: {
+        rate: 4.1,
+        count: 259,
       },
     },
     {
@@ -279,6 +282,7 @@ const Home = () => {
       },
     },
   ];
+
   return (
     <div>
       <section>
@@ -319,7 +323,7 @@ const Home = () => {
               return (
                 <Col md={3} className="product-card">
                   <Link to="/product">
-                    <Card className="product-body">
+                    <Card>
                       <Card.Img
                         variant="top"
                         src={product.image}
@@ -331,6 +335,9 @@ const Home = () => {
                           <h6>{product.category}</h6>
                           <p className="description">{product.description}</p>
                           <p>&#8377; {product.price}</p>
+                          {/* <p> {product.rating}</p> */}
+
+                          
                         </Card.Text>
                         <div className="d-flex gap-2 mb-2">
                           <Button variant="primary">Add to Cart</Button>

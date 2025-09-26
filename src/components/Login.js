@@ -44,7 +44,7 @@ const Login = () => {
                       <Col>
                         <Field name="email" type="email"   placeholder="email" />
                         {errors.email && touched.email ? (
-                          <div>{errors.email}</div>
+                          <div className="text-danger">{errors.email}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -55,7 +55,7 @@ const Login = () => {
                       <Col>
                         <Field name="password" type="password"  placeholder="password"/>
                         {errors.password && touched.password ? (
-                          <div>{errors.password}</div>
+                          <div className="text-danger">{errors.password}</div>
                         ) : null}
                       </Col>
                     </Row>

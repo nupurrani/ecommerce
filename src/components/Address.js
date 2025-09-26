@@ -24,11 +24,11 @@ const Address = () => {
       .matches(/^[a-zA-Z]+$/, "Only letters are allowed")
       .max(20, "Too Long!")
       .required("state is Mandetory!"),
-    // pin: Yup.string()
-    //   .matches(/^[1-9]\d{5}$/, "Enter a valid 6 Digit PIN CODE! ")
-    //   .min(6, "Please fill Minimum 6 digit PIN CODE !")
-    //   .max(10, "Invalid PIN CODE!")
-    //   .required("PINCODE is Mandetory!"),
+    pin: Yup.string()
+      .matches(/^[1-9]\d{5}$/, "Enter a valid 6 Digit PIN CODE! ")
+      .min(6, "Please fill Minimum 6 digit PIN CODE !")
+      .max(10, "Invalid PIN CODE!")
+      .required("PINCODE is Mandetory!"),
     mobile: Yup.string()
       .matches(/^[6-9]\d{9}$/, "Enter a valid 10 Digit Mobile No. ")
       .required("Mobile No. is Mandetory!"),
@@ -85,7 +85,7 @@ const Address = () => {
                       <Col>
                         <Field name="addressline1" />
                         {errors.addressline1 && touched.addressline1 ? (
-                          <div>{errors.addressline1}</div>
+                          <div className="text-danger">{errors.addressline1}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -96,7 +96,7 @@ const Address = () => {
                       <Col>
                         <Field name="addressline2" />
                         {errors.addressline2 && touched.addressline2 ? (
-                          <div>{errors.addressline2}</div>
+                          <div className="text-danger">{errors.addressline2}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -107,7 +107,7 @@ const Address = () => {
                       <Col>
                         <Field name="city" type="city" />
                         {errors.city && touched.city ? (
-                          <div>{errors.city}</div>
+                          <div className="text-danger">{errors.city}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -118,7 +118,7 @@ const Address = () => {
                       <Col>
                         <Field name="state" type="state" />
                         {errors.state && touched.state ? (
-                          <div>{errors.state}</div>
+                          <div className="text-danger">{errors.state}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -130,7 +130,7 @@ const Address = () => {
                         <Field name="pin" />
                         {/* <InputMask mask="999999" maskChar={null} name="pin" placeholder="Enter PIN" /> */}
                         {errors.pin && touched.pin ? (
-                          <div>{errors.pin}</div>
+                          <div className="text-danger">{errors.pin}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -141,7 +141,7 @@ const Address = () => {
                       <Col>
                         <Field name="mobile" />
                         {errors.mobile && touched.mobile ? (
-                          <div>{errors.mobile}</div>
+                          <div className="text-danger">{errors.mobile}</div>
                         ) : null}
                       </Col>
                     </Row>

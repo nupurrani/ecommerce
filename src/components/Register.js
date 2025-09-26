@@ -46,7 +46,7 @@ const Register = () => {
                       <Col>
                         <Field name="mobile"  />
                         {errors.mobile && touched.mobile ? (
-                          <div className="error">{errors.mobile}</div>
+                          <div className="text-danger">{errors.mobile}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -57,7 +57,7 @@ const Register = () => {
                       <Col>
                         <Field name="email" type="email"/>
                         {errors.email && touched.email ? (
-                          <div className="error">{errors.email}</div>
+                          <div className="text-danger">{errors.email}</div>
                         ) : null}
                       </Col>
                     </Row>
@@ -68,7 +68,7 @@ const Register = () => {
                       <Col>
                         <Field name="password"   type="password" />
                         {errors.password && touched.password ? (
-                          <div className="error">{errors.password}</div>
+                          <div className="text-danger">{errors.password}</div>
                         ) : null}
                       </Col>
                     </Row>
