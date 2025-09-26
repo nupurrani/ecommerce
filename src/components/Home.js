@@ -1,7 +1,11 @@
 import React from "react";
 import { Col, Container, Row, Card, Button, Carousel } from "react-bootstrap";
 import { Link } from "react-router";
-import Slide1 from '../Images/slide1.jpg'
+import Slide4 from '../Images/slide4.jpg'
+// import Slide1 from '../Images/slide1.jpg'
+import Slide7 from '../Images/slide7.jpg'
+import slide4 from '../Images/slide4.jpg'
+import slide6 from '../Images/slide6.jpg'
 const Home = () => {
   const products = [
     {
@@ -283,31 +287,24 @@ const Home = () => {
             <Col>
               <Carousel>
                 <Carousel.Item>
-                  <img src={Slide1} className="img-fluid" />
-                  <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </p>
+                  <img src={slide4} className="img-fluid" />
+                  <Carousel.Caption className="img-text">
+                    <h1>𝙃𝙐𝙂𝙀 𝙎𝘼𝙇𝙀 𝙊𝙉 𝙉𝙊𝙒</h1>
+                    <h4>𝘜𝘱 𝘵𝘰 50% 𝘰𝘧𝘧 𝙖𝙡𝙡 𝘱𝘳𝘰𝘥𝘶𝘤𝘵𝘴</h4>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img src={Slide1} className="img-fluid" />
-                  <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
+                  <img src={Slide7} className="img-fluid" />
+                  <Carousel.Caption className="img-text">
+                    <h1>𝙎𝘼𝙇𝙀 𝙀𝙉𝘿𝙎 𝙎𝙊𝙊𝙉</h1>
+                    <h4>𝘜𝘱 𝘵𝘰 50% 𝘰𝘧𝘧 𝘴𝘦𝘭𝘦𝘤𝘵𝘦𝘥 𝘱𝘳𝘰𝘥𝘶𝘤𝘵𝘴</h4>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img src={Slide1} className="img-fluid" />
-                  <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>
-                      Praesent commodo cursus magna, vel scelerisque nisl
-                      consectetur.
-                    </p>
+                  <img src={slide6} className="img-fluid" />
+                  <Carousel.Caption className="img-text">
+                    <h1>𝙎𝘼𝙇𝙀 𝙀𝙉𝘿𝙎 𝙎𝙊𝙊𝙉</h1>
+                    <h4>𝘜𝘱 𝘵𝘰 50% 𝘰𝘧𝘧 𝘴𝘦𝘭𝘦𝘤𝘵𝘦𝘥 𝘱𝘳𝘰𝘥𝘶𝘤𝘵𝘴</h4>
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>

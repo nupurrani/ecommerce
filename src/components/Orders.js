@@ -142,14 +142,14 @@ const Orders = () => {
   ];
   return (
     <div>
-      <section>
+      <section className="order1">
         <Container>
           {cartData.map((product, index) => {
             return (
               <Row>
                 <Col md={12}>
                   <Card>
-                    <Row>
+                    <Row className="order3">
                       <Col md={3}>
                         <Card.Img
                           variant="top"
