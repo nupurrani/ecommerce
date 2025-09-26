@@ -4,6 +4,23 @@ import { Col, Dropdown, Row, Card, Button } from "react-bootstrap";
 import { Link } from "react-router";
 
 const Category = () => {
+  const categories =[
+    {
+      "id":1,
+      "categoryName":"men's clothing",
+      "photo":""
+    },
+    {
+      "id":2,
+      "categoryName":"men's clothing",
+      "photo":""
+    },
+    {
+      "id":3,
+      "categoryName":"men's clothing",
+      "photo":""
+    }
+  ]
   const products = [
     {
       id: 1,
@@ -284,7 +301,7 @@ const Category = () => {
                 <Row>
                   {products.map((product, index) => {
                     return (
-                      <Col md={3} className="product-card">
+                      <Col md={3} className="product-card" key={index}>
                         <Link to="/product">
                         <Card>
                           <Card.Img variant="top" src={product.image}  className="productImage"/>
