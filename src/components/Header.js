@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faCartShopping, faHome, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faHome, faEnvelope, faPhone , faHeart} from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   return (
     <div>
@@ -46,10 +46,10 @@ const Header = () => {
                         My Orders
                       </Nav.Link>
                       <Nav.Link as={Link} to="/cart">
-                       <FontAwesomeIcon icon={faCartShopping} />  Cart
+                       <FontAwesomeIcon icon={faCartShopping} />
                       </Nav.Link>
                       <Nav.Link as={Link} to="/wishlist">
-                       <FontAwesomeIcon icon={faCartShopping} />  Wishlist
+                       <FontAwesomeIcon icon={faHeart} />
                       </Nav.Link>
                       <Nav.Link as={Link} to="/register">
                         Register

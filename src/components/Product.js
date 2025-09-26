@@ -47,7 +47,7 @@ const Product = () => {
         <Container>
           {cartData.map((product, index) => {
             return (
-              <Row>
+              <Row key={index}>
                 <Col md={12}>
                   <Card>
                     <Row>

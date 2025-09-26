@@ -193,7 +193,7 @@ const Address = () => {
                     <div role="group" aria-labelledby="my-radio-group">
                       {addresses.map((address, index) => {
                         return (
-                          <div>
+                          <div key={index}>
                             <label>
                               <Field
                                 type="radio"

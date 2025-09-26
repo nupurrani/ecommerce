@@ -321,7 +321,7 @@ const Home = () => {
           <Row>
             {products.map((product, index) => {
               return (
-                <Col md={3} className="product-card">
+                <Col md={3} className="product-card" key={index}>
                   <Link to="/product">
                     <Card>
                       <Card.Img
