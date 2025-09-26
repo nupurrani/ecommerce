@@ -58,10 +58,6 @@ const cart = () => {
                             <p>&#8377; {product.price}</p>
                           </Card.Text>
                           <div className="d-flex gap-2 mb-2">
-                            <Button variant="primary">
-                              <FontAwesomeIcon icon={faCartShopping} />
-                              Add to Cart
-                            </Button>
                             <Button variant="outline-primary">Buy Now</Button>
                             <Button variant="outline-primary">Remove</Button>
                           </div>
