@@ -21,7 +21,7 @@ const Login = () => {
         <Container>
           <Row>
             <Col>
-              <h2>Login</h2>
+              <h2>Ｌｏｇｉｎ</h2>
               <Formik 
                 initialValues={{
                   // mobile: "",

@@ -245,7 +245,7 @@ const sizes = [
         <Container>
           <Row>
             <Col>
-              <h2>Add Product</h2>
+              <h2>𝐀𝐝𝐝 𝐏𝐫𝐨𝐝𝐮𝐜𝐭</h2>
               <Formik
                 initialValues={{
                   productname: "",

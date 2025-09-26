@@ -24,7 +24,7 @@ const Register = () => {
         <Container>
           <Row>
             <Col>
-              <h2 className="form-title">Register</h2>
+              <h2 className="form-title"><b>𝚁𝚎𝚐𝚒𝚜𝚝𝚎𝚛</b> </h2>
               <Formik
                 initialValues={{
                   mobile: "",
