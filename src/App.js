@@ -20,6 +20,7 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import AddProduct from "./components/AddProduct";
 import New from "./components/New";
+import Star from "./components/Star";
 
 
 
