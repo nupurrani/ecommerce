@@ -246,7 +246,8 @@ text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 } */
  
  .glass-container {
-  width: 400px;
+  /* width: 400px; */
+  width:600px;
   padding: 30px;
   margin-left: 35%;
   margin-top: 2%;
@@ -347,4 +348,9 @@ button:hover {
 .register a:hover{
   color: purple;
   text-decoration:underline;
+}
+.description{
+  width: 100%;
+  height: 100px;
+  resize: none;
 }

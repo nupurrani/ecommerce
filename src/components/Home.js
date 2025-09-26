@@ -1,7 +1,7 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { Col, Dropdown, Row, Card, Button } from "react-bootstrap";
+import { Col, Container, Row, Card, Button, Carousel } from "react-bootstrap";
 import { Link } from "react-router";
+import Slide1 from '../Images/slide1.jpg'
 const Home = () => {
   const products = [
     {
@@ -279,28 +279,68 @@ const Home = () => {
     <div>
       <section>
         <Container>
-          
+          <Row>
+            <Col>
+              <Carousel>
+                <Carousel.Item>
+                  <img src={Slide1} className="img-fluid" />
+                  <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>
+                      Nulla vitae elit libero, a pharetra augue mollis interdum.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={Slide1} className="img-fluid" />
+                  <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={Slide1} className="img-fluid" />
+                  <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                      Praesent commodo cursus magna, vel scelerisque nisl
+                      consectetur.
+                    </p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section>
+        <Container>
           <Row>
             {products.map((product, index) => {
               return (
                 <Col md={3} className="product-card">
                   <Link to="/product">
-                  <Card>
-                    <Card.Img variant="top" src={product.image}  className="productImage"/>
-                    <Card.Body>
-                      <Card.Title>{product.title}</Card.Title>
-                      <Card.Text>
-                        <h6>{product.category}</h6>
-                        <p className="description">{product.description}</p>
-                        <p>&#8377; {product.price}</p>
-                      </Card.Text>
-                       <div className="d-flex gap-2 mb-2">
-                      <Button variant="primary">Add to Cart</Button>
-                      <Button variant="outline-primary">Buy Now</Button>
-
-                       </div>
-                    </Card.Body>
-                  </Card>
+                    <Card>
+                      <Card.Img
+                        variant="top"
+                        src={product.image}
+                        className="productImage"
+                      />
+                      <Card.Body>
+                        <Card.Title>{product.title}</Card.Title>
+                        <Card.Text>
+                          <h6>{product.category}</h6>
+                          <p className="description">{product.description}</p>
+                          <p>&#8377; {product.price}</p>
+                        </Card.Text>
+                        <div className="d-flex gap-2 mb-2">
+                          <Button variant="primary">Add to Cart</Button>
+                          <Button variant="outline-primary">Buy Now</Button>
+                        </div>
+                      </Card.Body>
+                    </Card>
                   </Link>
                 </Col>
               );
