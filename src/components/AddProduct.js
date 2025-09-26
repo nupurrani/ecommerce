@@ -241,7 +241,7 @@ const sizes = [
 ]
   return (
     <div>
-      <section className="glass-container">
+      <section className="glass-container container2" >
         <Container>
           <Row>
             <Col>

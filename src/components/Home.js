@@ -319,13 +319,13 @@ const Home = () => {
               return (
                 <Col md={3} className="product-card">
                   <Link to="/product">
-                    <Card>
+                    <Card className="product-body">
                       <Card.Img
                         variant="top"
                         src={product.image}
                         className="productImage"
                       />
-                      <Card.Body>
+                      <Card.Body className="product-body">
                         <Card.Title>{product.title}</Card.Title>
                         <Card.Text>
                           <h6>{product.category}</h6>
