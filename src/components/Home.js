@@ -1,12 +1,17 @@
 import React from "react";
+// import "./Home.css";
 import { Col, Container, Row, Card, Button, Carousel } from "react-bootstrap";
+import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router";
-import Slide4 from '../Images/slide4.jpg'
+import Slide4 from "../Images/slide4.jpg";
 // import Slide1 from '../Images/slide1.jpg'
-import Slide7 from '../Images/slide7.jpg'
-import slide4 from '../Images/slide4.jpg'
-import slide6 from '../Images/slide6.jpg'
-// import Star from "./components/Star";
+import Slide7 from "../Images/slide7.jpg";
+import slide4 from "../Images/slide4.jpg";
+import slide6 from "../Images/slide6.jpg";
+import Stack from "react-bootstrap/Stack";
+// import ReactStars from "react-rating-stars-component";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+
 
 
 const Home = () => {
@@ -19,7 +24,7 @@ const Home = () => {
         "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       category: "men's clothing",
       image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-       rating: {
+      rating: {
         rate: 4.1,
         count: 259,
       },
@@ -282,7 +287,20 @@ const Home = () => {
       },
     },
   ];
+  const StarRating = ({ rating }) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
 
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) stars.push(<FaStar key={i} color="#FFD700" />);
+      else if (i === fullStars && hasHalfStar)
+        stars.push(<FaStarHalfAlt key={i} color="#FFD700" />);
+      else stars.push(<FaRegStar key={i} color="#FFD700" />);
+    }
+
+    return <div className="star-rating" style={{ display: "flex", gap: "3px" }}>{stars}</div>;
+  };
   return (
     <div>
       <section>
@@ -335,10 +353,23 @@ const Home = () => {
                           <h6>{product.category}</h6>
                           <p className="description">{product.description}</p>
                           <p>&#8377; {product.price}</p>
-                          {/* <p> {product.rating}</p> */}
 
-                          
+                          <div className="rating-container">
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "2px",
+                              }}
+                            >
+                              <StarRating
+                                rating={product.rating.rate}
+                                className="StarRating"
+                              />
+                            </div>
+                          </div>
                         </Card.Text>
+
                         <div className="d-flex gap-2 mb-2">
                           <Button variant="primary">Add to Cart</Button>
                           <Button variant="outline-primary">Buy Now</Button>

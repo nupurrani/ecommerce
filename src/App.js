@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+// import "./Home.css";
+
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
 
 // import { Routes, Route, } from 'lucide-react';
@@ -20,7 +22,8 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import AddProduct from "./components/AddProduct";
 import New from "./components/New";
-import Star from "./components/Star";
+// 
+
 
 
 
@@ -49,7 +52,6 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/new" element={<New/>}/>
 
-        
         
         <Route path="*" element={<Category/>}/>
         

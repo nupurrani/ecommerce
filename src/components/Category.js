@@ -2,25 +2,26 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Col, Dropdown, Row, Card, Button } from "react-bootstrap";
 import { Link } from "react-router";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const Category = () => {
-  const categories =[
+  const categories = [
     {
-      "id":1,
-      "categoryName":"men's clothing",
-      "photo":""
+      id: 1,
+      categoryName: "men's clothing",
+      photo: "",
     },
     {
-      "id":2,
-      "categoryName":"men's clothing",
-      "photo":""
+      id: 2,
+      categoryName: "men's clothing",
+      photo: "",
     },
     {
-      "id":3,
-      "categoryName":"men's clothing",
-      "photo":""
-    }
-  ]
+      id: 3,
+      categoryName: "men's clothing",
+      photo: "",
+    },
+  ];
   const products = [
     {
       id: 1,
@@ -293,39 +294,73 @@ const Category = () => {
       },
     },
   ];
+  const StarRating = ({ rating }) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) stars.push(<FaStar key={i} color="#FFD700" />);
+      else if (i === fullStars && hasHalfStar)
+        stars.push(<FaStarHalfAlt key={i} color="#FFD700" />);
+      else stars.push(<FaRegStar key={i} color="#FFD700" />);
+    }
+
+    return (
+      <div className="star-rating" style={{ display: "flex", gap: "3px" }}>
+        {stars}
+      </div>
+    );
+  };
   return (
     <div>
       <section>
-              <Container>
-                
-                <Row>
-                  {products.map((product, index) => {
-                    return (
-                      <Col md={3} className="product-card" key={index}>
-                        <Link to="/product">
-                        <Card>
-                          <Card.Img variant="top" src={product.image}  className="productImage"/>
-                          <Card.Body>
-                            <Card.Title>{product.title}</Card.Title>
-                            <Card.Text>
-                              <h6>{product.category}</h6>
-                              <p className="description">{product.description}</p>
-                              <p>&#8377; {product.price}</p>
-                            </Card.Text>
-                             <div className="d-flex gap-2 mb-2">
-                            <Button variant="primary">Add to Cart</Button>
-                            <Button variant="outline-primary">Buy Now</Button>
-      
-                             </div>
-                          </Card.Body>
-                        </Card>
-                        </Link>
-                      </Col>
-                    );
-                  })}
-                </Row>
-              </Container>
-            </section>
+        <Container>
+          <Row>
+            {products.map((product, index) => {
+              return (
+                <Col md={3} className="product-card" key={index}>
+                  <Link to="/product">
+                    <Card>
+                      <Card.Img
+                        variant="top"
+                        src={product.image}
+                        className="productImage"
+                      />
+                      <Card.Body>
+                        <Card.Title>{product.title}</Card.Title>
+                        <Card.Text>
+                          <h6>{product.category}</h6>
+                          <p className="description">{product.description}</p>
+                          <p>&#8377; {product.price}</p>
+                          <div className="rating-container">
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "2px",
+                              }}
+                            >
+                              <StarRating
+                                rating={product.rating.rate}
+                                className="StarRating"
+                              />
+                            </div>
+                          </div>
+                        </Card.Text>
+                        <div className="d-flex gap-2 mb-2">
+                          <Button variant="primary">Add to Cart</Button>
+                          <Button variant="outline-primary">Buy Now</Button>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
+      </section>
     </div>
   );
 };

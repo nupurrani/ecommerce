@@ -10,6 +10,8 @@ import {
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Stack from "react-bootstrap/Stack";
+// import ReactStars from "react-rating-stars-component";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const Orders = () => {
   const cartData = [
@@ -89,7 +91,6 @@ const Orders = () => {
         rate: 2.9,
         count: 340,
       },
-
     },
     {
       id: 17,
@@ -140,6 +141,20 @@ const Orders = () => {
       },
     },
   ];
+  const StarRating = ({ rating }) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    for (let i = 0; i < 5; i++) {
+      if (i < fullStars) stars.push(<FaStar key={i} color="#FFD700" />);
+      else if (i === fullStars && hasHalfStar)
+        stars.push(<FaStarHalfAlt key={i} color="#FFD700" />);
+      else stars.push(<FaRegStar key={i} color="#FFD700" />);
+    }
+
+    return <div className="star-rating" style={{ display: "flex", gap: "3px" }}>{stars}</div>;
+  };
   return (
     <div>
       <section className="order1">
@@ -162,7 +177,34 @@ const Orders = () => {
                           <div className="p-2">{product.title}</div>
                           <div className="p-2">&#8377; {product.price}</div>
                           <div className="p-2"> {product.description}</div>
+                          {/* <div className="p-2"> {product.rating}</div> */}
+
+                          {/* <Star stars={stars} reviws={reviews} /> */}
                         </Stack>
+                        {/* <div className="mt-2">
+                          <ReactStars
+                            count={5}
+                            value={product.rating.rate}
+                            size={24}
+                            edit={false}
+                            activeColor="#ffd700"
+                          />
+                          <small className="text-muted">
+                            
+                            ({product.rating.count} reviews)
+                            ({product.rating.rate} reviews)
+                          </small>
+                        </div> */}
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                          }}
+                        >
+                          <StarRating rating={product.rating.rate} />
+                          <span>({product.rating.count} reviews)</span>
+                        </div>
                       </Col>
                     </Row>
                   </Card>

@@ -417,4 +417,22 @@ button:hover {
  .productImage:hover{
   scale: 1.1;
  } */
+/* Product Card Styling */
+.star-rating {
+  display: flex;
+  gap: 3px;
+}
 
+.star-rating svg {
+  color: #FFD700; 
+  cursor: pointer; 
+  /* transition: transform 0.2s; */
+  transition: transform 0.2s ,color 0.2s; 
+
+}
+
+/* Hover effect */
+ .star-rating svg:hover {
+  transform: scale(1.3); 
+  color: #FFA500; 
+}
