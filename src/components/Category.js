@@ -346,7 +346,8 @@ const Category = () => {
                                 className="StarRating"
                               />
                             </div>
-                          </div>
+                            <div className="heart"></div>
+                            </div>
                         </Card.Text>
                         <div className="d-flex gap-2 mb-2">
                           <Button variant="primary">Add to Cart</Button>

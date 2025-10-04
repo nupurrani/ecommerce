@@ -436,3 +436,42 @@ button:hover {
   transform: scale(1.3); 
   color: #FFA500; 
 }
+.heart {
+  position: relative;
+  width: 10px;       /* heart width */
+  height: 10px;      /* heart height */
+  background: #CC2609;
+  transform: rotate(-45deg);
+  /* margin: 15px auto; */
+  left: 200px;
+  bottom: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* top circles of heart */
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #CC2609;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -5px;    /* half of height */
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 5px;    /* half of width */
+}
+
+/* Hover effect */
+.heart:hover {
+  transform: rotate(-45deg) scale(1.5); /* grow slightly on hover */
+  box-shadow: 0 0 5px #FF6B6B;
+}

@@ -12,8 +12,6 @@ import Stack from "react-bootstrap/Stack";
 // import ReactStars from "react-rating-stars-component";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
-
-
 const Home = () => {
   const products = [
     {
@@ -299,7 +297,11 @@ const Home = () => {
       else stars.push(<FaRegStar key={i} color="#FFD700" />);
     }
 
-    return <div className="star-rating" style={{ display: "flex", gap: "3px" }}>{stars}</div>;
+    return (
+      <div className="star-rating" style={{ display: "flex", gap: "3px" }}>
+        {stars}
+      </div>
+    );
   };
   return (
     <div>
@@ -366,6 +368,9 @@ const Home = () => {
                                 rating={product.rating.rate}
                                 className="StarRating"
                               />
+                            </div>
+                            <div className="container">
+                              <div className="heart"></div>
                             </div>
                           </div>
                         </Card.Text>
