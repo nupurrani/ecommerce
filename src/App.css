@@ -475,3 +475,34 @@ button:hover {
   transform: rotate(-45deg) scale(1.5); /* grow slightly on hover */
   box-shadow: 0 0 5px #FF6B6B;
 }
+/* .d-flex1{
+  display: flex;
+  align-items: center;
+  background: #1B1B1B;
+  padding: 5px;
+  width: 300px;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 1px 1px 5px #292929;
+  margin: 10px;
+  position: relative;
+  transition: width 1.5s;
+}
+.d-flex2{
+  margin: 10px 50px;
+  width: 100%;
+  color: #fff;
+  border: none;
+  background: transparent;
+  outline: none;
+  transition-delay: 0.5s;
+} */
+ .search-box{
+  font-size: 20px;
+  border: solid 0.3em #000000;
+  /* border: solid 0.2em #000000; */
+  display: inline-block;
+  position: relative;
+  border-radius: 2.5em;
+  /* border-radius: 2em; */
+ }

@@ -1,12 +1,19 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faCartShopping, faHome, faEnvelope, faPhone , faHeart} from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faHome,
+  faEnvelope,
+  faPhone,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   return (
     <div>
@@ -34,7 +41,8 @@ const Header = () => {
                   <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                       <Nav.Link as={Link} to="/home">
-                        <FontAwesomeIcon icon={faHome} />Home
+                        <FontAwesomeIcon icon={faHome} />
+                        Home
                       </Nav.Link>
                       <Nav.Link as={Link} to="/category">
                         Category
@@ -46,10 +54,10 @@ const Header = () => {
                         My Orders
                       </Nav.Link>
                       <Nav.Link as={Link} to="/cart">
-                       <FontAwesomeIcon icon={faCartShopping} />
+                        <FontAwesomeIcon icon={faCartShopping} />
                       </Nav.Link>
                       <Nav.Link as={Link} to="/wishlist">
-                       <FontAwesomeIcon icon={faHeart} />
+                        <FontAwesomeIcon icon={faHeart} />
                       </Nav.Link>
                       <Nav.Link as={Link} to="/register">
                         Register
@@ -58,21 +66,34 @@ const Header = () => {
                         Address
                       </Nav.Link>
                       <Nav.Link as={Link} to="/login">
-                         Login
+                        Login
                       </Nav.Link>
                       <Nav.Link as={Link} to="/addproduct">
-                         Add Product
+                        Add Product
                       </Nav.Link>
                       <Nav.Link as={Link} to="/profile">
-                         Profile
+                        Profile
                       </Nav.Link>
                       <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item as={Link} to="/test">
                           Logout
                         </NavDropdown.Item>
-                        
                       </NavDropdown>
                     </Nav>
+                    <Form className=" d-flex1" >
+                      <div className="d-flex2">
+                        <Form.Control
+                        type="search"
+                        placeholder="Search..."
+                        className="me-2"
+                        aria-label="Search"
+                      />
+                      </div>
+                      
+                    </Form>
+                    {/* <form className="search-box">
+                      <input type="text" placeholder="" />
+                    </form> */}
                   </Navbar.Collapse>
                 </Container>
               </Navbar>
