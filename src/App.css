@@ -136,6 +136,7 @@ p{
   width:80%;
   margin:10px 10%;
   max-height:200px;
+  
 }
 .description{
   white-space: nowrap; 
@@ -144,6 +145,28 @@ p{
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* .product-card{
+  display: grid; 
+  place-items: center; 
+  position: relative; 
+  height: 500px;
+  width: 350px;
+  background: ;
+} 
+.product_card{
+  overflow: hidden;
+}
+.product_card::before {
+  position: absolute;
+  content: "";
+  height: 180%;
+  width:  50%;
+  background: #4caf50;
+  transform: rotate(45deg);
+}
+.product_card:hover::before {
+animation: animate2 2s linear infinite;
+} */
 .product-card a{
   text-decoration: none !important;
 }
@@ -400,6 +423,8 @@ button:hover {
 	opacity:1; 
   transition: 2s ease;
   transform: scale(1.1); 
+  /* border: solid 5px whitesmoke; */
+  /* border: solid 10px red; */
   /* transform: rotate(360deg); */
   /* transform: rotateX(360deg); */
    /* transform: scale(1.3); */
